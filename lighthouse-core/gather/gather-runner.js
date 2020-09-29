@@ -234,8 +234,7 @@ class GatherRunner {
     if (XHTML_MIME_TYPE === mainRecord.mimeType) {
       // Can still check an XHTML document, but show a warning.
       baseArtifacts.LighthouseRunWarnings.push(str_(UIStrings.notHtml, {
-        requested: baseArtifacts.URL.requestedUrl,
-        final: baseArtifacts.URL.finalUrl,
+        mimeType: mainRecord.mimeType
       }));
     } else if (HTML_MIME_TYPE !== mainRecord.mimeType) {
       return new LHError(LHError.errors.NOT_HTML, {mimeType: mainRecord.mimeType});
